@@ -49,8 +49,10 @@ public class ProdutoController {
     public void guardaNoCache(Produto p) {
         String key = p.getCodigo()+"";
         String produto = gson.toJson(p);
-        System.out.println("Guardado no cache" + produto); 
+        System.out.println("Guardado no cache" + produto);   
         jedis.set(key,produto);
+        jedis.expire(key, 1800);
+        
     }
     
     

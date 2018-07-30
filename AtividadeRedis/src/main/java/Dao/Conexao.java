@@ -15,19 +15,19 @@ public class Conexao {
         try {
             Class.forName("org.postgresql.Driver");
             String url = "jdbc:postgresql://localhost:5432/atividadeRedis";
-            String pass = "#soad1212";
+            String pass = "";
             String user = "postgres";
             try{
                con = DriverManager.getConnection(url,user,pass);
-            } catch(SQLException ex){    
+            } catch(SQLException ex){
                 System.out.println("ERRO AO CONECTAR "+ ex.getMessage());
                 return null;
-            }            
+            }
         } catch (ClassNotFoundException ex) {
                 System.out.println("ERRO AO CARREGAR O DRIVER "+ ex.getMessage());
                 return null;
         }
         return con;
-    } 
-    
+    }
+
 }
